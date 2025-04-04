@@ -18,9 +18,10 @@ ul {
   justify-content: center;
   gap: 30px;
 }
-#datetime-picker {
+.simple-input,
+fieldset {
   padding: 8px;
-  width: 278px;
+  width: 360px;
   border: 1px solid #808080;
   border-radius: 4px;
   margin-right: 8px;
@@ -28,12 +29,14 @@ ul {
   box-sizing: border-box;
   letter-spacing: 0.04em;
 }
-#datetime-picker:hover {
+input:hover {
   border-color: #000000;
 }
-#datetime-picker:focus {
+input:focus {
   border-color: #4e75ff;
 }
+
+/* timer */
 #datetime-picker:disabled {
   background-color: #fafafa;
   color: #808080;
@@ -69,4 +72,38 @@ ul {
 }
 .label {
   text-transform: uppercase;
+}
+
+/* snackbar */
+.delay-label {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  gap: 8px;
+}
+fieldset {
+  padding: 14px 48px 8px 48px;
+}
+fieldset:hover,
+fieldset:active {
+  border-color: #000000;
+}
+.left-label {
+  margin-right: 48px;
+}
+.create {
+  width: 360px;
+  text-align: center;
+  padding: 9px 0;
+  background-color: #4e75ff;
+  color: #ffff;
+  border: none;
+  border-radius: 8px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.create:hover {
+  background-color: #6c8cff;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
