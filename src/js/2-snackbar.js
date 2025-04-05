@@ -4,7 +4,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 function returnPromise(delay, userSelected) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (userSelected) {
+      if (userSelected === 'fulfilled') {
         resolve(`✅ Fulfilled promise in ${delay}ms`);
       } else {
         reject(`❌ Rejected promise in ${delay}ms`);
@@ -34,11 +34,12 @@ function returnPromise(delay, userSelected) {
 const form = document.querySelector('form');
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const delay = e.target.elements.delay.value;
+  const delay = Number(e.target.elements.delay.value);
   const userSelected = e.target.elements.state.value;
-  if (userSelected == 'fulfilled') {
-    returnPromise(delay, true);
-  } else {
-    returnPromise(delay, false);
-  }
+  returnPromise(delay, userSelected);
+  // if (userSelected == 'fulfilled') {
+  //   returnPromise(delay, true);
+  // } else {
+  //   returnPromise(delay, false);
+  // }
 });
